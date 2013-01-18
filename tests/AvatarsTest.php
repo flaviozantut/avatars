@@ -12,8 +12,8 @@ class AvatarsTest extends PHPUnit_Framework_TestCase {
 
     public function testUrl()
     {
-        $url = $this->avatars->url('username', 'auto');
-        $this->assertEquals('http://avatars.io/auto/username?size=default', $url);
+        $url = $this->avatars->url('user@mail.com', 'auto');
+        $this->assertEquals('http://avatars.io/auto/user@mail.com?size=default', $url);
     }
 
     public function testUpload()
@@ -21,8 +21,8 @@ class AvatarsTest extends PHPUnit_Framework_TestCase {
 
         $file = base64_encode(file_get_contents(dirname(__FILE__) . '/fixtures/avatar.jpg'));
         $this->assertEquals(
-            "http://avatars.io/{$this->avatars->getClientId()}/flaviozantut@gmail.com",
-            $this->avatars->upload($file, 'flaviozantut@gmail.com')
+            "http://avatars.io/{$this->avatars->getClientId()}/user@mail.com",
+            $this->avatars->upload($file, 'user@mail.com')
         );
     }
 }

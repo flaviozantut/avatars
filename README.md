@@ -28,7 +28,7 @@ add to app.php 'aliases':
 ## Usage
 
     //get avatar url
-    $app['avatars']->url('flaviozantut@gmail.com', 'auto');
+    $app['avatars']->url('user@mail.com', 'auto');
     //upload avatar
     $app['avatars']->upload(base64encodefile, userid);
     //get by URL
