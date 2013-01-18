@@ -28,8 +28,17 @@ class AvatarsServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
+
+
 		$this->app['config']->package('flaviozantut/avatars', __DIR__.'/../../config');
+
+		$this->app->singleton('avatars', function($app)
+		{
+		    return new Avatars($this->app['config']->get('avatars::clientid'), $this->app['config']->get('avatars::secretkey'));
+		});
 		$this->registerCommands();
+
+		include __DIR__.'/routes.php';
 	}
 
 	/**
@@ -57,15 +66,10 @@ class AvatarsServiceProvider extends ServiceProvider {
 		{
 			return new AvatarsSecretKeyCommand($app);
 		});
-		$this->app['command.avatars.register'] = $this->app->share(function($app)
-		{
-			return new AvatarsRegisterCommand($app);
-		});
 
 		$this->commands(
 			'command.avatars.secret_key',
-			'command.avatars.client_id',
-			'command.avatars.register'
+			'command.avatars.client_id'
 		);
 	}
 

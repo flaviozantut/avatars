@@ -80,12 +80,17 @@ class Avatars{
      */
     public function url($user, $service = '', $size = 'default')
     {
-        if ($service == '' and isset($this->clientId)) {
-            $service = $this->clientId;
-        } else {
+
+        if (!$service) {
+            $service = $this->getClientId();
+        } elseif(!preg_match("/twitter|facebook|instagram|gravatar/", $service)) {
              $service = 'auto';
         }
-        return self::AVATARS_IO . "/{$service}/{$user}?size=default";
+
+        if(!preg_match("/small|medium|large/", $size)) {
+                $size = 'default';
+        }
+        return self::AVATARS_IO . "/{$service}/{$user}?size={$size}";
     }
     /**
      * Upload avatar
