@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project version="2.0.0a12" title="Avatars">
+  <file path="Flaviozantut/Avatars/AvatarsServiceProvider.php" hash="591cdc75c3955991a1cfba8a00a051ac" package="Default">
+    <include line="41" type="Include" package="Default">
+      <name/>
+    </include>
+    <class final="false" abstract="false" namespace="Flaviozantut\Avatars" line="5" package="Default">
+      <extends>\Illuminate\Support\ServiceProvider</extends>
+      <name>AvatarsServiceProvider</name>
+      <full_name>\Flaviozantut\Avatars\AvatarsServiceProvider</full_name>
+      <property final="false" static="false" visibility="protected" line="12" namespace="Flaviozantut\Avatars" package="Default">
+        <name>$defer</name>
+        <default>false</default>
+        <docblock line="7">
+          <description>Indicates if loading of the provider is deferred.</description>
+          <long-description></long-description>
+          <tag line="7" name="var" description="" type="bool">
+            <type by_reference="false">bool</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Flaviozantut\Avatars" line="19" package="Default">
+        <name>boot</name>
+        <full_name>boot</full_name>
+        <docblock line="14">
+          <description>Bootstrap the application events.</description>
+          <long-description></long-description>
+          <tag line="14" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Flaviozantut\Avatars" line="29" package="Default">
+        <name>register</name>
+        <full_name>register</full_name>
+        <docblock line="24">
+          <description>Register the service provider.</description>
+          <long-description></long-description>
+          <tag line="24" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Flaviozantut\Avatars" line="49" package="Default">
+        <name>provides</name>
+        <full_name>provides</full_name>
+        <docblock line="44">
+          <description>Get the services provided by the provider.</description>
+          <long-description></long-description>
+          <tag line="44" name="return" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="Flaviozantut\Avatars" line="59" package="Default">
+        <name>registerCommands</name>
+        <full_name>registerCommands</full_name>
+        <docblock line="54">
+          <description>Register the artisan commands.</description>
+          <long-description></long-description>
+          <tag line="54" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file Flaviozantut/Avatars/AvatarsServiceProvider.php</error>
+      <error line="5" code="50000">No DocBlock was found for \Flaviozantut\Avatars\AvatarsServiceProvider</error>
+    </parse_markers>
+  </file>
+  <file path="Flaviozantut/Avatars/routes.php" hash="bf30230fc56d2420bd1f8d251cf7655d" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file Flaviozantut/Avatars/routes.php</error>
+    </parse_markers>
+  </file>
+  <file path="Flaviozantut/Avatars/AvatarsFacade.php" hash="66e46788e10098cb306c441e7f5d3604" package="Default">
+    <class final="false" abstract="false" namespace="Flaviozantut\Avatars" line="3" package="Default">
+      <extends>\Illuminate\Support\Facades\Facade</extends>
+      <name>AvatarsFacade</name>
+      <full_name>\Flaviozantut\Avatars\AvatarsFacade</full_name>
+      <method final="false" abstract="false" static="true" visibility="protected" namespace="Flaviozantut\Avatars" line="10" package="Default">
+        <name>getFacadeAccessor</name>
+        <full_name>getFacadeAccessor</full_name>
+        <docblock line="5">
+          <description>Get the registered name of the component.</description>
+          <long-description></long-description>
+          <tag line="5" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file Flaviozantut/Avatars/AvatarsFacade.php</error>
+      <error line="3" code="50000">No DocBlock was found for \Flaviozantut\Avatars\AvatarsFacade</error>
+    </parse_markers>
+  </file>
+  <file path="Flaviozantut/Avatars/Avatars.php" hash="7d56a470df3f87b96f85b4aaa836494c" package="Default">
+    <class final="false" abstract="false" namespace="Flaviozantut\Avatars" line="8" package="Default">
+      <extends/>
+      <name>Avatars</name>
+      <full_name>\Flaviozantut\Avatars\Avatars</full_name>
+      <docblock line="5">
+        <description>Avatars</description>
+        <long-description></long-description>
+      </docblock>
+      <constant namespace="Flaviozantut\Avatars" line="12" package="Default">
+        <name>AVATARS_IO</name>
+        <full_name>AVATARS_IO</full_name>
+        <value>'http://avatars.io'</value>
+        <docblock line="9">
+          <description>avatars.io url</description>
+          <long-description></long-description>
+        </docblock>
+      </constant>
+      <property final="false" static="false" visibility="private" line="16" namespace="Flaviozantut\Avatars" package="Default">
+        <name>$client</name>
+        <default></default>
+        <docblock line="13">
+          <description>Guzzle client</description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="20" namespace="Flaviozantut\Avatars" package="Default">
+        <name>$clientId</name>
+        <default></default>
+        <docblock line="17">
+          <description>client id to get uplouded avatar</description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="24" namespace="Flaviozantut\Avatars" package="Default">
+        <name>$secretKey</name>
+        <default></default>
+        <docblock line="21">
+          <description>secret key to auth on avatars.oi</description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Flaviozantut\Avatars" line="31" package="Default">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="25">
+          <description>Constructor class</description>
+          <long-description></long-description>
+          <tag line="25" name="param" description="" type="string" variable="$clientId">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="25" name="param" description="" type="string" variable="$secretKey">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="31">
+          <name>$clientId</name>
+          <default>''</default>
+          <type/>
+        </argument>
+        <argument line="31">
+          <name>$secretKey</name>
+          <default>''</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Flaviozantut\Avatars" line="41" package="Default">
+        <name>getClientId</name>
+        <full_name>getClientId</full_name>
+        <docblock line="36">
+          <description>Get client id</description>
+          <long-description></long-description>
+          <tag line="36" name="return" description="$clientId" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Flaviozantut\Avatars" line="50" package="Default">
+        <name>getSecretKey</name>
+        <full_name>getSecretKey</full_name>
+        <docblock line="45">
+          <description>Get secret key</description>
+          <long-description></long-description>
+          <tag line="45" name="return" description="$secretKey" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Flaviozantut\Avatars" line="59" package="Default">
+        <name>setClientId</name>
+        <full_name>setClientId</full_name>
+        <docblock line="54">
+          <description>Set client id</description>
+          <long-description></long-description>
+          <tag line="54" name="param" description="" type="string" variable="$value">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="59">
+          <name>$value</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Flaviozantut\Avatars" line="68" package="Default">
+        <name>setSecretKey</name>
+        <full_name>setSecretKey</full_name>
+        <docblock line="63">
+          <description>Set secret key</description>
+          <long-description></long-description>
+          <tag line="63" name="param" description="" type="string" variable="$value">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="68">
+          <name>$value</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Flaviozantut\Avatars" line="83" package="Default">
+        <name>url</name>
+        <full_name>url</full_name>
+        <docblock line="72">
+          <description>Get avatar url</description>
+          <long-description></long-description>
+          <tag line="72" name="param" description="user key" type="string" variable="$user">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="72" name="param" description="service to get avatar  suported: auto, twitter, facebook, instagram, gravatar" type="string" variable="$service">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="72" name="param" description="suported: default, small, medium, large" type="string" variable="$size">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="72" name="param" description="" type="string" variable="$test">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="72" name="return" description="avatar url" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="83">
+          <name>$user</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="83">
+          <name>$service</name>
+          <default>''</default>
+          <type/>
+        </argument>
+        <argument line="83">
+          <name>$size</name>
+          <default>'default'</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Flaviozantut\Avatars" line="105" package="Default">
+        <name>upload</name>
+        <full_name>upload</full_name>
+        <docblock line="97">
+          <description>Upload avatar</description>
+          <long-description></long-description>
+          <tag line="97" name="param" description="base64 encoded file" type="string" variable="$file">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="97" name="param" description="user id" type="string" variable="$user">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="97" name="return" description="avatar url" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="105">
+          <name>$file</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="105">
+          <name>$user</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file Flaviozantut/Avatars/Avatars.php</error>
+      <notice line="72" code="50013">Parameter $test could not be found in url()</notice>
+    </parse_markers>
+  </file>
+  <file path="commands/AvatarsSecretKeyCommand.php" hash="e647769070f88886178710cd1da3d967" package="Default">
+    <class final="false" abstract="false" namespace="Flaviozantut\Avatars" line="7" package="Default">
+      <extends>\Illuminate\Console\Command</extends>
+      <name>AvatarsSecretKeyCommand</name>
+      <full_name>\Flaviozantut\Avatars\AvatarsSecretKeyCommand</full_name>
+      <property final="false" static="false" visibility="protected" line="14" namespace="Flaviozantut\Avatars" package="Default">
+        <name>$name</name>
+        <default>'avatars:secret_key'</default>
+        <docblock line="9">
+          <description>The console command name.</description>
+          <long-description></long-description>
+          <tag line="9" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="21" namespace="Flaviozantut\Avatars" package="Default">
+        <name>$description</name>
+        <default>'Configure your http://avatars.oi OAuth access token.'</default>
+        <docblock line="16">
+          <description>The console command description.</description>
+          <long-description></long-description>
+          <tag line="16" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Flaviozantut\Avatars" line="28" package="Default">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="23">
+          <description>Create a new command instance.</description>
+          <long-description></long-description>
+          <tag line="23" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Flaviozantut\Avatars" line="38" package="Default">
+        <name>fire</name>
+        <full_name>fire</full_name>
+        <docblock line="33">
+          <description>Execute the console command.</description>
+          <long-description></long-description>
+          <tag line="33" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="Flaviozantut\Avatars" line="50" package="Default">
+        <name>getArguments</name>
+        <full_name>getArguments</full_name>
+        <docblock line="45">
+          <description>Get the console command arguments.</description>
+          <long-description></long-description>
+          <tag line="45" name="return" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="Flaviozantut\Avatars" line="62" package="Default">
+        <name>getOptions</name>
+        <full_name>getOptions</full_name>
+        <docblock line="57">
+          <description>Get the console command options.</description>
+          <long-description></long-description>
+          <tag line="57" name="return" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file commands/AvatarsSecretKeyCommand.php</error>
+      <error line="7" code="50000">No DocBlock was found for \Flaviozantut\Avatars\AvatarsSecretKeyCommand</error>
+    </parse_markers>
+  </file>
+  <file path="commands/AvatarsClientIdCommand.php" hash="6a4ce2c4834fe7f4008502203fd9649f" package="Default">
+    <class final="false" abstract="false" namespace="Flaviozantut\Avatars" line="7" package="Default">
+      <extends>\Illuminate\Console\Command</extends>
+      <name>AvatarsClientIdCommand</name>
+      <full_name>\Flaviozantut\Avatars\AvatarsClientIdCommand</full_name>
+      <property final="false" static="false" visibility="protected" line="15" namespace="Flaviozantut\Avatars" package="Default">
+        <name>$name</name>
+        <default>'command.avatars.register'</default>
+        <docblock line="10">
+          <description>The console command name.</description>
+          <long-description></long-description>
+          <tag line="10" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="22" namespace="Flaviozantut\Avatars" package="Default">
+        <name>$description</name>
+        <default>'Configure your http://avatars.oi client ID.'</default>
+        <docblock line="17">
+          <description>The console command description.</description>
+          <long-description></long-description>
+          <tag line="17" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Flaviozantut\Avatars" line="29" package="Default">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="24">
+          <description>Create a new command instance.</description>
+          <long-description></long-description>
+          <tag line="24" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Flaviozantut\Avatars" line="39" package="Default">
+        <name>fire</name>
+        <full_name>fire</full_name>
+        <docblock line="34">
+          <description>Execute the console command.</description>
+          <long-description></long-description>
+          <tag line="34" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="Flaviozantut\Avatars" line="51" package="Default">
+        <name>getArguments</name>
+        <full_name>getArguments</full_name>
+        <docblock line="46">
+          <description>Get the console command arguments.</description>
+          <long-description></long-description>
+          <tag line="46" name="return" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="Flaviozantut\Avatars" line="63" package="Default">
+        <name>getOptions</name>
+        <full_name>getOptions</full_name>
+        <docblock line="58">
+          <description>Get the console command options.</description>
+          <long-description></long-description>
+          <tag line="58" name="return" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file commands/AvatarsClientIdCommand.php</error>
+      <error line="7" code="50000">No DocBlock was found for \Flaviozantut\Avatars\AvatarsClientIdCommand</error>
+    </parse_markers>
+  </file>
+  <file path="config/config.php" hash="99bf75081f70f1211dad0c2bd21ad620" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file config/config.php</error>
+    </parse_markers>
+  </file>
+  <package name="Default" full_name="Default"/>
+  <namespace name="Flaviozantut" full_name="Flaviozantut">
+    <namespace name="Avatars" full_name="Flaviozantut\Avatars"/>
+  </namespace>
+  <marker count="0">todo</marker>
+  <marker count="0">fixme</marker>
+  <deprecated count="0"/>
+</project>
