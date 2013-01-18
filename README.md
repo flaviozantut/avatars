@@ -29,7 +29,6 @@ add to app.php 'aliases':
     php artisan config:publish flaviozantut/avatars
 
 
-
 ## Usage
 
     //get avatar url
