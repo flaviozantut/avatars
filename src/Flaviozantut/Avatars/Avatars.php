@@ -7,7 +7,7 @@ use Guzzle\Http\Client;
  */
 class Avatars{
     /**
-     * Avatars oi url
+     * avatars.io url
      */
     const AVATARS_IO = 'http://avatars.io';
     /**
@@ -72,9 +72,11 @@ class Avatars{
     /**
      * Get avatar url
      *
+     *
      * @param string $user user key
-     * @param string $service service to get avatar  suported: auto|twitter|facebook|instagram|gravatar
-     * @param string $size suported: default|small|medium|large
+     * @param string $service service to get avatar  suported: auto, twitter, facebook, instagram, gravatar
+     * @param string $size suported: default, small, medium, large
+     * @param string $test
      *
      * @return string avatar url
      */
