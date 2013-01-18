@@ -12,7 +12,7 @@ class AvatarsClientIdCommand extends Command {
 	 *
 	 * @var string
 	 */
-	protected $name = 'command.avatars.register';
+	protected $name = 'avatars:client_id';
 
 	/**
 	 * The console command description.

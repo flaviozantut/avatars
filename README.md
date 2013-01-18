@@ -24,8 +24,9 @@ add to app.php 'aliases':
    Register on [avatars.io](http://avatars.io) and after receiving the email with the configuration switches run the commands substituting the keys
 
 
-    php artisan avatars:secret_key YOURSECRETKEY
     php artisan avatars:client_id YOURCLIENTID
+    php artisan avatars:secret_key YOURSECRETKEY
+
 
 
 ## Usage
@@ -36,6 +37,8 @@ add to app.php 'aliases':
     $app['avatars']->upload(base64encodefile, userid);
     //get by URL
     http://yourapp.dev/avatars/userid/service/size
+    //POST photo to
+    http://yourapp.dev/avatars/userid
 
 ##DOCS
 
