@@ -33,3 +33,8 @@ add to app.php 'aliases':
     $app['avatars']->upload(base64encodefile, userid);
     //get by URL
     http://yourapp.dev/avatars/userid/service/size
+
+
+## MIT License
+
+  [license.txt](/flaviozantut/avatars/blob/master/license.txt)
