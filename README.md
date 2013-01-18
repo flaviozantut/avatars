@@ -34,9 +34,9 @@ add to app.php 'aliases':
     //get by URL
     http://yourapp.dev/avatars/userid/service/size
 
-##DOC
+##DOCS
 
- [Doc](http://flaviozantut.github.com/avatars/buils/docs/index.html)
+ [Docs](http://flaviozantut.github.com/avatars/build/docs/index.html)
 
 
 ## MIT License
