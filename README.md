@@ -26,6 +26,7 @@ add to app.php 'aliases':
 
     php artisan avatars:client_id YOURCLIENTID
     php artisan avatars:secret_key YOURSECRETKEY
+    php artisan config:publish flaviozantut/avatars
 
 
 
