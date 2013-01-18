@@ -1,1 +1,1 @@
-phpdoc -d src/ -t build/docs
+phpdoc -d src/ -t build/docs --title Avatars

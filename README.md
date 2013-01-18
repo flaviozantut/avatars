@@ -36,7 +36,7 @@ add to app.php 'aliases':
 
 ##DOC
 
- [Doc](http://flaviozantut.github.com/avatars/doc/index.html)
+ [Doc](http://flaviozantut.github.com/avatars/buils/docs/index.html)
 
 
 ## MIT License
