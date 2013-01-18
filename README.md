@@ -5,7 +5,7 @@ Laravel 4 client to [avatars.io](http://avatars.io)
 
 ## Installation
 
-Installation with Laravel Artisan
+Installation with php composer
 
     php composer.phar require flaviozantut/avatars
     dev-master
