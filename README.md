@@ -3,6 +3,9 @@
 Laravel 4 client to [avatars.io](http://avatars.io)
 
 
+[![Build Status](https://travis-ci.org/flaviozantut/avatars.png?branch=master)](undefined)
+
+
 ## Installation
 
 Installation with php composer
