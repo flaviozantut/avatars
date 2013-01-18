@@ -1,0 +1,29 @@
+{
+    "name": "flaviozantut/avatars",
+    "description": "avatars.io client",
+    "keywords":["avatar","avatar.io", "gravatar", "laravel"],
+    "homepage": "https://github.com/flaviozantut/avatars",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "flaviozantut",
+            "email": "flaviozantut@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "illuminate/support": "4.0.x",
+        "guzzle/guzzle": "3.0.*"
+
+    },
+    "autoload": {
+        "classmap": [
+            "src/migrations",
+            "src/commands"
+        ],
+        "psr-0": {
+            "Flaviozantut\\Avatars": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
