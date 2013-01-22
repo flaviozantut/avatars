@@ -1,7 +1,7 @@
 {
     "name": "flaviozantut/avatars",
     "description": "avatars.io client",
-    "keywords":["avatar","avatar.io", "gravatar", "laravel"],
+    "keywords":["avatar","avatars.io", "gravatar", "laravel4"],
     "homepage": "https://github.com/flaviozantut/avatars",
     "license": "MIT",
     "authors": [
