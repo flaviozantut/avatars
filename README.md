@@ -10,8 +10,7 @@ Laravel 4 client to [avatars.io](http://avatars.io)
 
 Installation with php composer
 
-    php composer.phar require flaviozantut/avatars
-    dev-master
+     composer require flaviozantut/avatars:dev-master
 
 add to app.php 'providers':
 
