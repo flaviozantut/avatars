@@ -129,7 +129,7 @@ class Avatars{
                 )
             )
         )->send()->json();
-        if(isset($response['error'])) {
+        if($response['error']) {
             throw new \Exception($response['error']);
         } elseif(isset($response['meta'])) {
             throw new \Exception("Auth error");
