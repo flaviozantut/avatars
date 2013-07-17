@@ -4,6 +4,7 @@ Laravel 4 client to [avatars.io](http://avatars.io)
 
 
 [![Build Status](https://travis-ci.org/flaviozantut/avatars.png?branch=master)](https://travis-ci.org/flaviozantut/avatars)
+[![Coverage Status](https://coveralls.io/repos/flaviozantut/avatars/badge.png)](https://coveralls.io/r/flaviozantut/avatars)
 [![Latest Stable Version](https://poser.pugx.org/flaviozantut/avatars/v/stable.png)](https://packagist.org/packages/flaviozantut/avatars)
 [![Total Downloads](https://poser.pugx.org/flaviozantut/avatars/downloads.png)](https://packagist.org/packages/flaviozantut/avatars)
 
