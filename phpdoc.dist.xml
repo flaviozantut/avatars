@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<phpdoc>
+    <title>Avatars</title>
+    <files>
+        <directory>src/</directory>
+    </files>
+    <transformations>
+    </transformations>
+</phpdoc>

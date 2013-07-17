@@ -42,9 +42,9 @@ add to app.php 'aliases':
     //POST photo to
     http://yourapp.dev/avatars/userid
 
-##DOCS
+## DOCS
 
- [Docs](http://flaviozantut.github.com/avatars/build/docs/index.html)
+ [Docs](https://github.com/flaviozantut/avatars/tree/master/docs/ApiIndex.md)
 
 
 ## MIT License
