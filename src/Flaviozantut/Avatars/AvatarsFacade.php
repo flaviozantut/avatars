@@ -1,7 +1,7 @@
 <?php namespace Flaviozantut\Avatars;
 
-class AvatarsFacade extends \Illuminate\Support\Facades\Facade {
-
+class AvatarsFacade extends \Illuminate\Support\Facades\Facade
+{
     /**
      * Get the registered name of the component.
      *

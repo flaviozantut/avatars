@@ -5,7 +5,8 @@ use Guzzle\Http\Client;
 /**
  * Avatars
  */
-class Avatars{
+class Avatars
+{
     /**
      * avatars.io url
      */
@@ -73,9 +74,9 @@ class Avatars{
      * Get avatar url
      *
      *
-     * @param string $user user key
+     * @param string $user    user key
      * @param string $service service to get avatar  suported: auto, twitter, facebook, instagram, gravatar
-     * @param string $size suported: default, small, medium, large
+     * @param string $size    suported: default, small, medium, large
      * @param string $test
      *
      * @return string avatar url
@@ -85,13 +86,14 @@ class Avatars{
 
         if (!$service) {
             $service = $this->getClientId();
-        } elseif(!preg_match("/twitter|facebook|instagram|gravatar/", $service)) {
+        } elseif (!preg_match("/twitter|facebook|instagram|gravatar/", $service)) {
              $service = 'auto';
         }
 
-        if(!preg_match("/small|medium|large/", $size)) {
+        if (!preg_match("/small|medium|large/", $size)) {
                 $size = 'default';
         }
+
         return self::AVATARS_IO . "/{$service}/{$user}?size={$size}";
     }
     /**
@@ -129,9 +131,9 @@ class Avatars{
                 )
             )
         )->send()->json();
-        if($response['error']) {
+        if ($response['error']) {
             throw new \Exception($response['error']);
-        } elseif(isset($response['meta'])) {
+        } elseif (isset($response['meta'])) {
             throw new \Exception("Auth error");
         } elseif (!isset($response['data']['upload_info'])) {
             return $response['data']['url'];
@@ -150,6 +152,7 @@ class Avatars{
         )->send();
 
         $complete = $client->post($response['data']['id'] . '/complete',$auth )->send()->json();
+
         return $complete['data']['data'];
     }
 }
