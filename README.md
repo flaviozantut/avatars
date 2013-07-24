@@ -50,3 +50,7 @@ add to app.php 'aliases':
 ## MIT License
 
   [license.txt](/flaviozantut/avatars/blob/master/license.txt)
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/flaviozantut/avatars/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
