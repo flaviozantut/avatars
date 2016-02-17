@@ -1,4 +1,6 @@
-<?php namespace Flaviozantut\Avatars;
+<?php
+
+namespace Flaviozantut\Avatars;
 
 class AvatarsFacade extends \Illuminate\Support\Facades\Facade
 {
@@ -7,6 +9,8 @@ class AvatarsFacade extends \Illuminate\Support\Facades\Facade
      *
      * @return string
      */
-    protected static function getFacadeAccessor() { return 'avatars'; }
-
+    protected static function getFacadeAccessor()
+    {
+        return 'avatars';
+    }
 }
