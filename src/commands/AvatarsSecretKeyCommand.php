@@ -1,4 +1,6 @@
-<?php namespace Flaviozantut\Avatars;
+<?php
+
+namespace Flaviozantut\Avatars;
 
 use Illuminate\Console\Command;
 use Symfony\Component\Console\Input\InputArgument;
@@ -36,8 +38,8 @@ class AvatarsSecretKeyCommand extends Command
      */
     public function fire()
     {
-        $configFile =  __DIR__.'/../config/config.php';
-        file_put_contents($configFile, preg_replace("/secretkey\'\ \=\>\ \'". app()['config']->get('avatars::secretkey') . "/", "secretkey' => '" . $this->argument('YOUROAUTHACCESSTOKEN'), file_get_contents($configFile)));
+        $configFile = __DIR__.'/../config/config.php';
+        file_put_contents($configFile, preg_replace("/secretkey\'\ \=\>\ \'".app()['config']->get('avatars::secretkey').'/', "secretkey' => '".$this->argument('YOUROAUTHACCESSTOKEN'), file_get_contents($configFile)));
         $this->info('http://avatars.oi OAuth access token updated.');
     }
 
@@ -48,9 +50,9 @@ class AvatarsSecretKeyCommand extends Command
      */
     protected function getArguments()
     {
-        return array(
-            array('YOUROAUTHACCESSTOKEN', InputArgument::REQUIRED, 'Your http://avatars.oi OAuth access token.'),
-        );
+        return [
+            ['YOUROAUTHACCESSTOKEN', InputArgument::REQUIRED, 'Your http://avatars.oi OAuth access token.'],
+        ];
     }
 
     /**
@@ -60,7 +62,6 @@ class AvatarsSecretKeyCommand extends Command
      */
     protected function getOptions()
     {
-        return array();
+        return [];
     }
-
 }

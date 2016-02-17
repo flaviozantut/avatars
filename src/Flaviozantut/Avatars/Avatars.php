@@ -1,30 +1,33 @@
 <?php
+
 namespace Flaviozantut\Avatars;
 
 use Guzzle\Http\Client;
+
 /**
- * Avatars
+ * Avatars.
  */
 class Avatars
 {
     /**
-     * avatars.io url
+     * avatars.io url.
      */
     const AVATARS_IO = 'http://avatars.io';
     /**
-     * Guzzle client
+     * Guzzle client.
      */
     private $client;
     /**
-     * client id to get uplouded avatar
+     * client id to get uplouded avatar.
      */
     private $clientId;
     /**
-     * secret key to auth on avatars.oi
+     * secret key to auth on avatars.oi.
      */
     private $secretKey;
+
     /**
-     * Constructor class
+     * Constructor class.
      *
      * @param string $clientId
      * @param string $secretKey
@@ -34,8 +37,9 @@ class Avatars
         $this->setClientId($clientId);
         $this->setSecretKey($secretKey);
     }
+
     /**
-     * Get client id
+     * Get client id.
      *
      * @return string $clientId
      */
@@ -43,8 +47,9 @@ class Avatars
     {
         return $this->clientId;
     }
+
     /**
-     * Get secret key
+     * Get secret key.
      *
      * @return string $secretKey
      */
@@ -52,8 +57,9 @@ class Avatars
     {
         return $this->secretKey;
     }
+
     /**
-     * Set client id
+     * Set client id.
      *
      * @param string $value
      */
@@ -61,8 +67,9 @@ class Avatars
     {
         $this->clientId = $value;
     }
+
     /**
-     * Set secret key
+     * Set secret key.
      *
      * @param string $value
      */
@@ -70,8 +77,9 @@ class Avatars
     {
         $this->secretKey = $value;
     }
+
     /**
-     * Get avatar url
+     * Get avatar url.
      *
      *
      * @param string $user    user key
@@ -83,58 +91,58 @@ class Avatars
      */
     public function url($user, $service = '', $size = 'default')
     {
-
         if (!$service) {
             $service = $this->getClientId();
-        } elseif (!preg_match("/twitter|facebook|instagram|gravatar/", $service)) {
-             $service = 'auto';
+        } elseif (!preg_match('/twitter|facebook|instagram|gravatar/', $service)) {
+            $service = 'auto';
         }
 
-        if (!preg_match("/small|medium|large/", $size)) {
-                $size = 'default';
+        if (!preg_match('/small|medium|large/', $size)) {
+            $size = 'default';
         }
 
-        return self::AVATARS_IO . "/{$service}/{$user}?size={$size}";
+        return self::AVATARS_IO."/{$service}/{$user}?size={$size}";
     }
+
     /**
-     * Upload avatar
+     * Upload avatar.
      *
      * @param string $file base64 encoded file
      * @param string $user user id
      *
      * @return string avatar url
      */
-    public function upload($file,$user)
+    public function upload($file, $user)
     {
         if (base64_decode($file, true)) {
             $file = base64_decode($file);
         } else {
-            throw new \Exception("Invalid base64 encode file");
+            throw new \Exception('Invalid base64 encode file');
         }
 
-        $client = new Client(self::AVATARS_IO.'/{version}/token',array(
-            'version' =>  'v1',
-        ));
-        $auth = array(
-            'x-client_id'  => $this->getClientId(),
+        $client = new Client(self::AVATARS_IO.'/{version}/token', [
+            'version' => 'v1',
+        ]);
+        $auth = [
+            'x-client_id'   => $this->getClientId(),
             'Authorization' => "OAuth {$this->getsecretKey()}",
-        );
+        ];
         $response = $client->post(
             null,
             $auth,
-            array(
-                'data' => array(
+            [
+                'data' => [
                     'filename' => md5($file),
-                    'md5' => md5($file),
-                    'size' => strlen(base64_decode($file)),
-                    'path' => $user
-                )
-            )
+                    'md5'      => md5($file),
+                    'size'     => strlen(base64_decode($file)),
+                    'path'     => $user,
+                ],
+            ]
         )->send()->json();
         if ($response['error']) {
             throw new \Exception($response['error']);
         } elseif (isset($response['meta'])) {
-            throw new \Exception("Auth error");
+            throw new \Exception('Auth error');
         } elseif (!isset($response['data']['upload_info'])) {
             return $response['data']['url'];
         }
@@ -142,16 +150,16 @@ class Avatars
 
         $client->put(
             $uploadInfo['upload_url'],
-            array(
+            [
                 'Authorization' => $uploadInfo['signature'],
-                'Date' => $uploadInfo['date'],
-                'Content-Type'=> $uploadInfo['content_type'],
-                'x-amz-acl'=> 'public-read'
-            ),
+                'Date'          => $uploadInfo['date'],
+                'Content-Type'  => $uploadInfo['content_type'],
+                'x-amz-acl'     => 'public-read',
+            ],
             $file
         )->send();
 
-        $complete = $client->post($response['data']['id'] . '/complete',$auth )->send()->json();
+        $complete = $client->post($response['data']['id'].'/complete', $auth)->send()->json();
 
         return $complete['data']['data'];
     }

@@ -1,4 +1,6 @@
-<?php namespace Flaviozantut\Avatars;
+<?php
+
+namespace Flaviozantut\Avatars;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -28,10 +30,9 @@ class AvatarsServiceProvider extends ServiceProvider
      */
     public function register()
     {
-
         $this->app['config']->package('flaviozantut/avatars', __DIR__.'/../../config');
 
-        $this->app->singleton('avatars', function($app) {
+        $this->app->singleton('avatars', function ($app) {
             return new Avatars($this->app['config']->get('avatars::clientid'), $this->app['config']->get('avatars::secretkey'));
         });
         $this->registerCommands();
@@ -46,7 +47,7 @@ class AvatarsServiceProvider extends ServiceProvider
      */
     public function provides()
     {
-        return array();
+        return [];
     }
 
     /**
@@ -56,10 +57,10 @@ class AvatarsServiceProvider extends ServiceProvider
      */
     private function registerCommands()
     {
-        $this->app['command.avatars.client_id'] = $this->app->share(function($app) {
+        $this->app['command.avatars.client_id'] = $this->app->share(function ($app) {
             return new AvatarsClientIdCommand($app);
         });
-        $this->app['command.avatars.secret_key'] = $this->app->share(function($app) {
+        $this->app['command.avatars.secret_key'] = $this->app->share(function ($app) {
             return new AvatarsSecretKeyCommand($app);
         });
 
@@ -68,5 +69,4 @@ class AvatarsServiceProvider extends ServiceProvider
             'command.avatars.client_id'
         );
     }
-
 }

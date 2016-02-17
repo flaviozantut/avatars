@@ -1,4 +1,6 @@
-<?php namespace Flaviozantut\Avatars;
+<?php
+
+namespace Flaviozantut\Avatars;
 
 use Illuminate\Console\Command;
 use Symfony\Component\Console\Input\InputArgument;
@@ -36,8 +38,8 @@ class AvatarsClientIdCommand extends Command
      */
     public function fire()
     {
-        $configFile =  __DIR__.'/../config/config.php';
-        file_put_contents($configFile, preg_replace("/clientid\'\ \=\>\ \'" . app()['config']->get('avatars::clientid') . "/", "clientid' => '" . $this->argument('YOURAPPSCLIENTID'), file_get_contents($configFile)));
+        $configFile = __DIR__.'/../config/config.php';
+        file_put_contents($configFile, preg_replace("/clientid\'\ \=\>\ \'".app()['config']->get('avatars::clientid').'/', "clientid' => '".$this->argument('YOURAPPSCLIENTID'), file_get_contents($configFile)));
         $this->info('http://avatars.oi client ID updated.');
     }
 
@@ -48,9 +50,9 @@ class AvatarsClientIdCommand extends Command
      */
     protected function getArguments()
     {
-        return array(
-            array('YOURAPPSCLIENTID', InputArgument::REQUIRED, 'Your http://avatars.oi client ID.'),
-        );
+        return [
+            ['YOURAPPSCLIENTID', InputArgument::REQUIRED, 'Your http://avatars.oi client ID.'],
+        ];
     }
 
     /**
@@ -60,7 +62,6 @@ class AvatarsClientIdCommand extends Command
      */
     protected function getOptions()
     {
-        return array();
+        return [];
     }
-
 }
